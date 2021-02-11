@@ -34,7 +34,7 @@ public class CarsTest {
         car2.move(loserMoveStrategy);
         car3.move(loserMoveStrategy);
 
-        List<Car> winnerCars = cars.getWinnerCars();
+        List<Car> winnerCars = cars.findAllWinnerCars();
         assertTrue(winnerCars.contains(car1));
     }
 }

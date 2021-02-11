@@ -18,14 +18,14 @@ public class Cars {
                 .collect(Collectors.toList());
     }
 
-    private Car getMaxPositionCar() {
+    private Car findMaxPositionCar() {
         return cars.stream()
                 .max(Car::compareTo)
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    public List<Car> getWinnerCars() {
-        Car maxPositionCar = this.getMaxPositionCar();
+    public List<Car> findAllWinnerCars() {
+        Car maxPositionCar = this.findMaxPositionCar();
         return cars.stream()
                 .filter(car -> car.hasSamePositionWith(maxPositionCar))
                 .collect(Collectors.toList());
