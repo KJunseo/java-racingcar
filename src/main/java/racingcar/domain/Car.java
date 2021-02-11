@@ -2,14 +2,14 @@ package racingcar.domain;
 
 public class Car implements Comparable<Car> {
     private static final int MOVING_BASELINE = 4;
-    private static final int START_POSITION = 0;
+    private static final Position START_POSITION = new Position(0);
 
     private final Racer racer;
     private Position position;
 
     public Car(Racer racer) {
         this.racer = racer;
-        this.position = new Position(START_POSITION);
+        this.position = START_POSITION;
     }
 
     public void move(MoveStrategy moveStrategy) {
